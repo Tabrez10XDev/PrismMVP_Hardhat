@@ -8,7 +8,7 @@ interface IVerifier {
         uint256[2] memory a,
         uint256[2][2] memory b,
         uint256[2] memory c,
-        uint256[2] memory input
+        uint256[1] memory input
     ) external view returns (bool);
 }
 
@@ -113,7 +113,7 @@ contract zkVault is Ownable {
                 _soulData.a,
                 _soulData.b,
                 _soulData.c,
-                _soulData.input
+                [_soulData.input[0]]
             ); // Using zkSNARK verification
     }
 
